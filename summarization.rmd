@@ -1,0 +1,54 @@
+---
+title: "Summarization Exercises"
+author: "Derek Willis"
+date: "6/6/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Summarization in R
+
+We use the `tidyverse` library to load and calculate basic summaries of data in R. These exercises are focused on two of the basic summary verbs: `group_by` and `summarize` from the tidyverse. Let's start by loading some data using the `read_rds()` function.
+
+```{r}
+time_stats <- read_rds("data/time_stats.rds")
+```
+
+This data represents time of possession and lead statistics from Maryland women's basketball games from the 2014-15 season through the 2021-22 season. There are columns for time of possession (measured in minutes and seconds), the percentage of time that a team held the lead and the largest lead in points. These columns exist for the home and visiting teams, and there are additional columns for Maryland (regardless of it was the home or visiting team).
+
+## Basic Questions
+
+Let's start with some basic summaries, such as:
+
+1. What is the average lead time for Maryland in all games? We only want to see a single figure here - one average - so you won't need to group_by. Group By is only used when you want to see another column in addition to the calculation (here, an average). So just summarize will do.
+
+```{r}
+# put your code to calculate the overall average here
+```
+
+2. What is the average lead time for Maryland for each season? Now we need group_by, since we want to see the season as well.
+
+```{r}
+# put your code to calculate the average for each season here
+```
+
+3. What is the average largest lead for Maryland overall? 
+
+```{r}
+# put your code to calculate the overall average here
+```
+
+4. What is the average largest lead for Maryland for each season? 
+
+```{r}
+# put your code to calculate the average for each season here
+```
+
+5. Let's do some counting next. How many games _in each season_ has Maryland had a lead time of exactly 00:00:00 (zero minutes and zero seconds)? You'll need to filter on those records, keeping in mind that time columns are treated like numbers so you don't need quotes around them.
+
+```{r}
+# put your code to count the number of games in each season that Maryland has had a lead time of 00:00:00
+```
